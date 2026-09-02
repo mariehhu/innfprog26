@@ -9,6 +9,13 @@
     <h1>Variabler i JavaScript</h1>
     <p>Hei, <span id="name"></span> (<span id="age">?</span> år)</p>
 
+    <h2>Handlekruv</h2>
+    <ul>
+        <li>Antall produkter: <span id="quantitySpan">0</span></li>
+        <li>Pris: <span id="priceSpan">0</span>kroner</li>
+        <li>Sum: <span id="totalSpan">0</span>kroner</li>
+    </ul>
+
     <script>
         //DEKLARERE VARIABLER 
         /* 
@@ -23,9 +30,36 @@
        document.getElementById("name").innerHTML = firstname + " " + lastname
 
        //deklarere en variabel for alder og birthyear
+       //forenkla versjon av hvordan man kan vise alder med let
        const birthYear = 2006
        let age = 2026 - birthYear
+      
        document.getElementById("age").innerHTML = age
+
+/* forbereder handlekurv
+egen prøving 
+       const product = "300"
+       let price = 300
+       let quantity = Number
+       let sum = Number
+
+
+
+       let totalt = 300*(x product selected)
+*/
+
+       let quantity = 4
+       const price = 1000
+       let total = quantity * price
+
+       document.getElementById("quantitySpan").innerHTML = quantity
+       document.getElementById("priceSpan").innerHTML = price
+       document.getElementById("totalSpan").innerHTML = total
+
+
+
+    
+
     </script>
 </body>
 </html>
