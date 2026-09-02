@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet for Betinget logikk</title>
+</head>
+<body>
+    <p id="loginStatus">Ikke logget inn</p>
+
+    <script>
+        const username = "marie"
+        const password = "passord123"
+        let loggedIn = false
+
+        //IF-TEST SOM SJEKKER OM INNSEDT BRUKERNAVN MATCHER SYSTEMET:
+        if(username === "marie") {
+            console.log("Brukernavn er riktig")
+        } else {
+            console.log("Feil brukernavn")
+        }
+
+        
+//else tar for seg alle andre tilfeller der brukernavne ikke er "korrekt"
+
+//IF-test som sjekker om brukernabn og password er riktig , og gjør klar login:
+        if(username = "marie" && password = "passord123") {
+            loggedIn = true
+            console.log (loggedIn)
+        } 
+
+        /*
+if(password === "passord123") {
+            console.log("Passord er riktig")
+        }
+*/
+    </script>
+</body>
+</html>
