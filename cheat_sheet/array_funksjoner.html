@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet for Arrayfunksjoner</title>
+</head>
+<body>
+    <h1>Arrayfunksjoner</h1>
+    <p>Vi finner antall i en array ved å bruke .length: <span id="arrayCount"></span></p>
+    
+    <h2>To måter å skrive ut en Array på:</h2>
+    <p>.toString(): <span id="toString"></span></p>
+    <p>.join (): <span id=join></span></p>
+
+    <h2>Array etter slettemetoder er kjørt</h2>
+    <p id="deleted"></p>
+
+
+    <script>
+        const books = [
+            "Silver Eyes",
+            "Harry Potter og de vises stein",
+            "Fourth Wing",
+            "Bibelen",
+            "Nålen",
+            "Jævla drittsystem",
+            "Don't make me think",
+            "Twisted ones",
+            "Hunger Games",
+            "Surrounded by idiots",
+
+        ]
+
+        document.getElementById("arrayCount").innerHTML = books.length
+
+        //LEGGE TIL ELEMENTER I ARRAYEN:
+        //.push(element): legger inn element på slutten av arrayen 
+        books.push("Lord of the Rings: Fellowship of the Ring")
+
+        //.unshift(element): legger inn element i starten av arrayen, og forskyver indexer!
+        books.unshift("Lord of the Rings: Two Towers")
+
+        //.splice(startindex, number of elements modified, element(s)): 
+        //startindex: hvilken index vi starter å manipulere på
+        //number of elements modified: hvis vi skal slette elementer, hvor mange fra og med start index
+        // (eksempel: hvis startindex er 2, og antall elementer er 2 slettes index 2 og 3) 
+        //når vi legger til elementer, skal number of elements modified alltid være 0
+        books.splice(5, 0, "Lord of the Rings: Return of the King")
+
+        //to.String(): skriver ut en kommaseparert liste av en array
+        document.getElementById("toString").innerHTML = books.toString()
+        //.join(param): join skriver ut alle elementen i en array separert av en param
+        document.getElementById("join").innerHTML = books.join(" / ")
+
+        //FJERNE ELEMENTER I ARRAYEN:
+        //.pop(): sletter det siste elementet i arrayen
+        books.pop()
+
+        //.shift(): sletter det første elementet i arrayen
+        books.shift
+
+        //.splice(startindex, number of elements to delete)
+        //books.splice(4, 1)
+
+        //.indexOf(element): Finner det første elementet i arrayen som matcher paramenteren element, og returnerer indexen.
+        const indexFound = books.indexOf("Lord of the Rings: Return of the King")
+        console.log("Index til LOTR-bok: ", indexFound)
+
+        //bruke indexOf-verdien i variabelen indexFound til å slette riktig bok:
+        books.splice(indexFound, 1)
+        //hvis elementet vi forsøker å finne indexen til ikke finnes, returnerer indexOf -1
+
+        //Hvordan sjekke om en verdi finnes i en array:
+        const bookExists = books.includes("Fourth wing")
+        console.log("Finnes Fourth Wing ?", bookExists)
+        
+
+        document.getElementById("deleted").innerHTML = books.join(", ")
+
+    
+
+
+    </script>
+</body>
+</html>
