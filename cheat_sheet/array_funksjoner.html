@@ -16,6 +16,13 @@
     <h2>Array etter slettemetoder er kjørt</h2>
     <p id="deleted"></p>
 
+    <h2>Sortering</h2>
+    <p>Sortert A-Å: <span id="sortAZ"></span></p>
+    <p>Sortert Å-A: <span id="sortZA"></span></p>
+
+    <h2>Sortering av tall</h2>
+    <p>Sortert 0-9: <span id="sort09"></span></p>
+    <p>Sortert 9-0: <span id="sort90"></span></p>
 
     <script>
         const books = [
@@ -78,8 +85,25 @@
 
         document.getElementById("deleted").innerHTML = books.join(", ")
 
-    
+        //Sortere en array fra A-Å:
+        books.sort()
+        document.getElementById("sortAZ").innerHTML = books.join(", ")
 
+        //Sortere en array fra Å-A:
+        books.reverse()
+        document.getElementById("sortZA").innerHTML = books.join(", ")
+
+        //Sortere en array med tall
+        const tall = [99, 6, 34, 8, 8, 11, 44, 83, 29, 6000, 366, 420]
+        tall.sort(function(a, b) {return a - b})
+        document.getElementById("sort09").innerHTML = tall.join(", ")
+
+        tall.reverse(function(a, b) {return b - a})
+        document.getElementById("sort90").innerHTML = tall.join(", ")
+
+       
+        
+        
 
     </script>
 </body>
