@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions, oppgave 1</title>
+</head>
+    <h2>Functions, oppgave 1</h2>
+    <p>Viser array sortert A-Z: <span id="sortAZ"></span></p>
+
+<body>
+    <script>
+        const people = ["Marius", "Tore", "Susanne", "Monica", "Arne", "Zoltan", "Beate"]
+        
+        people.sort()
+
+        function printSortPeople() {
+            document.getElementById("sortAZ").innerHTML = people.join(", ")
+        }
+        printSortPeople()
+        
+/* marius sin løsning
+        const people = ["Marius", "Tore", "Susanne", "Monica", "Arne", "Zoltan", "Beate"]
+
+        function sortArray(array){
+            //sortere arrayen alfabetisk
+            array.sort()
+            
+            //lage en ny p-tag
+            const ptag = document.createElement("p")
+
+            //fylle p-tag med array, kommaseparert 
+            ptag.innerHTML = array.join(", ")
+
+            //plasserer <p>-taggen lengst ned i <body>-taggen
+            document.body.appendChild(ptag)
+
+            //testutskrift
+            console.log(array)
+        }
+        sortArray(people)
+
+        */
+
+    </script>
+
+</body>
+</html>
