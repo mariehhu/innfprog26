@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function oppgave 2 løsning</title>
+</head>
+<body>
+    <h2>Function oppgave 2 løsning</h2>
+
+    <script>
+        const people = ["Marius", "Tore", "Susanne", "Monica", "Arne", "Zoltan", "Beate"]
+
+        function printNames(array) {
+            //sorterer alfabetisk
+            array.sort()
+            //lage ul-element
+            const ul = document.createElement("ul")
+            //fylle ul-listen med listeelementer med navn, person er der for å mellomlagre informasjon
+            array.map(person => {
+                //lage en <li> inni map, hvis den er utenfor map hadde hele arrayen blitt dytta inn i den samme li-en
+                const li = document.createElement("li")
+                //få navnet i "person"-paramenteren inn i <li>
+                li.innerHTML = person
+                //legge <li>-elementet inn i <ul>
+                ul.appendChild(li)
+
+            })
+
+            //test utskrift
+            console.log(ul)
+
+            //skrive ut lista i nettleser
+            document.body.appendChild(ul)
+        }
+        //Kjøre funksjon
+        printNames(people)
+    </script>
+
+
+</body>
+</html>

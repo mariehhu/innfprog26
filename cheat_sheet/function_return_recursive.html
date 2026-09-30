@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet: Functions with RETURN & RECURSION</title>
+</head>
+<body>
+    <script>
+        /*
+         * function calculator
+         * number1, number2: tall
+         * operator: kan ha en av følgende verdier: "ass", "subtract", "multiply", "divide"
+         */
+        function calculator(number1, number2, operator) {
+            if(operator === "add") {
+                number1 + number2
+                return number1 + number2
+            }
+            if(operator === "subtract") {
+                return number1 - number2
+            }
+            if(operator === "multiply") {
+                return number1 * number2
+            }
+            if(operator === "divide") {
+                return number1 / number2
+            }
+            // hvis vi manlger operator, eller funksjonen ikke kan kjøre, avslutt den:
+            return
+        }
+
+        const result = calculator(2,3,"add")
+
+        //hvis vi skal skrive resultatet fra calculator til koden, må vi legge det i et HTML-element
+        const p = document.createElement("p")
+        p.innerHTML = result
+        document.body.appendChild(p)
+
+        console.log(calculator(88,7,"divide"))
+
+
+        // recursive = a process, rule, or function that repeats by applying itself to its own result or definition
+        // én funksjon som gjentar seg med mindre den har møtt en definisjon eller betingelse  
+        // REKURSIV FUNKSJON: NEDTELLING
+        function countdown(from) {
+            if(from > 0) {
+                console.log(from)
+                from--
+                countdown(from)
+            } else {
+                return
+            }
+        }
+
+        countdown(10)
+        
+    </script>
+    
+</body>
+</html>
