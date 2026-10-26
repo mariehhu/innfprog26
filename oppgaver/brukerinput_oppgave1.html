@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brukerinput oppgave 1</title>
+</head>
+<body>
+    <h2>Legg til navn her</h2>
+    <section>
+        <input type="text" id="firstname" name="firstname" placeholder="ditt fornavn her" />
+        <button type="save">Lagre</button>
+    </section>
+    <h2>Navn:</h2>
+    <ul id="names">
+
+    </ul>
+
+    <script>
+        //bruke eventListener for å se etter input etter verdi (variabel) også legg inn i arrayen med .push
+        //skrive ut listen, etter å utføre push, med .map
+        
+        const names = ["Tone", "Bjørnar", "Mette"]
+        
+        
+
+        function namePrint() {
+            let html = ""
+            names.map(name => { html += "<li>" + name + "</li>"})
+            document.getElementById("names").innerHTML = html
+        }
+
+        namePrint()
+
+        document.getElementById("save").addEventListener("click", function (event) {
+            event.preventDefault()
+            names.push(document.getElementById("firstname").value)
+            console.log(names)
+            namePrint()
+        })
+        
+        
+    </script>
+    
+</body>
+</html>
