@@ -12,6 +12,7 @@
             <label for="lengde">Hvor langt skal passordet være?</label>
             <input type="number" id="lengde" name="lengde" value="8" />
         </p>
+        <p>Velg hvilke </p>
         
         <ul>
             <li><label><input type="checkbox" id="lowercase" checked/>små bokstaver</label></li>
@@ -36,6 +37,15 @@
         const specialChars = "!@*#$%&/()=? "
 
         const tillatteTegn = ""
+
+        function checkAll() {
+            document.getElementById("lowercase").checked = true
+            document.getElementById("uppercase").checked = true
+            document.getElementById("numbers").checked = true
+            document.getElementById("specialChars").checked = true
+
+
+        }
 
         document.getElementById("generer").addEventListener("click", function (event) {
             //tømme tilatteTegn for nytt utvalg:

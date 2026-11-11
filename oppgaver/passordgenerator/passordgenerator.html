@@ -16,10 +16,11 @@
 
     <script>
         let passord = ""
-        const tillateTegn = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ0123456789"
+        const tillatteTegn = "abcdefghijklmnopqrstuvwxyzæøåABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ0123456789"
 
          document.getElementById("generate").addEventListener("click", function (event) {
-            for(teller = 0; teller == 12; ) {
+            for(teller = 0; teller == 12; teller++) {
+                const tilfeldigTegn = Math.Floor(Math.random() * tillatteTegn.length)
 
             }
          })
